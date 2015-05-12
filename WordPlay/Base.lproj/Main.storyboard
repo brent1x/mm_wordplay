@@ -341,6 +341,12 @@
                                     <segue destination="Lu2-0c-PqT" kind="unwind" unwindAction="unwindToThisViewController:" id="Zau-Dm-7p5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBl-la-zNt">
+                                <rect key="frame" x="9" y="86" width="302" height="175"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -352,6 +358,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="nZn-JQ-kmE"/>
                     <connections>
+                        <outlet property="resultsLabel" destination="cBl-la-zNt" id="2M3-Rr-xfp"/>
                         <outlet property="resultsTextView" destination="Hfe-y9-Ksv" id="DAL-uL-HwX"/>
                     </connections>
                 </viewController>

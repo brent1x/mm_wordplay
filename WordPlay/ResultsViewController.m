@@ -11,6 +11,7 @@
 @interface ResultsViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *resultsTextView;
+@property (weak, nonatomic) IBOutlet UILabel *resultsLabel;
 
 @property NSString *resultString;
 
@@ -21,18 +22,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.resultString = [NSString stringWithFormat:@"Hey my name is %@. I'm a %@ and this is %@ing %@.", self.name, self.noun, self.adverb, self.adjective];
+    //self.resultString = [NSString stringWithFormat:@"Hey my name is %@. I'm a %@ and this is %@ing %@.", self.name, self.noun, self.adverb, self.adjective];
 
+    NSString *string0 = self.name;
+    NSString *string1 = self.adjective;
+    NSString *string2 = self.adverb;
+    NSString *string3 = self.noun;
 
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] init];
-    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:@"test "
-                                                                             attributes:@{NSUnderlineStyleAttributeName: @(NSUnderlineStyleNone)}]];
-    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:@"s"
-                                                                             attributes:@{NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle),
-                                                                                          NSBackgroundColorAttributeName: [UIColor redColor]}]];
-    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:@"tring"]];
+    NSString *text = [NSString stringWithFormat:@"%@ HEYWORLD %@ WHATSUP %@ - %@", string0,string3,string2,string1];
 
-    self.resultsTextView.text = [attributedString string];
+    NSDictionary *attribs = @{
+                              NSForegroundColorAttributeName:[UIColor whiteColor],
+                              NSFontAttributeName:[UIFont systemFontOfSize:10]
+                              };
+
+    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text attributes:attribs];
+
+    NSRange string0Range = [text rangeOfString:string0];
+    NSRange string1Range = [text rangeOfString:string1];
+    NSRange string2Range = [text rangeOfString:string2];
+    NSRange string3Range = [text rangeOfString:string3];
+
+    [attributedText setAttributes:@{NSForegroundColorAttributeName:[UIColor redColor], NSFontAttributeName:[UIFont systemFontOfSize:15]} range:string0Range];
+    [attributedText setAttributes:@{NSForegroundColorAttributeName:[UIColor blueColor], NSFontAttributeName:[UIFont systemFontOfSize:12]} range:string1Range];
+    [attributedText setAttributes:@{NSForegroundColorAttributeName:[UIColor greenColor], NSFontAttributeName:[UIFont systemFontOfSize:15]} range:string2Range];
+    [attributedText setAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor], NSFontAttributeName:[UIFont systemFontOfSize:15]} range:string3Range];
+
+    [self.resultsLabel setAttributedText:attributedText];
+    [self.resultsTextView setAttributedText:attributedText];
 
     //self.resultsTextView.text = self.resultString;
 
