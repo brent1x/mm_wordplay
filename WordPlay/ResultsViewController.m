@@ -11,7 +11,7 @@
 @interface ResultsViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *resultsTextView;
-@property (weak, nonatomic) IBOutlet UILabel *resultsLabel;
+// @property (weak, nonatomic) IBOutlet UILabel *resultsLabel;
 
 @property NSString *resultString;
 
