@@ -29,12 +29,9 @@
     NSString *string2 = self.adverb;
     NSString *string3 = self.noun;
 
-    NSString *text = [NSString stringWithFormat:@"%@ HEYWORLD %@ WHATSUP %@ - %@", string0,string3,string2,string1];
+    NSString *text = [NSString stringWithFormat:@"My name is chikka-chikka slim %@. I am a %@ and I'm %@ %@", string0,string3,string2,string1];
 
-    NSDictionary *attribs = @{
-                              NSForegroundColorAttributeName:[UIColor whiteColor],
-                              NSFontAttributeName:[UIFont systemFontOfSize:10]
-                              };
+    NSDictionary *attribs = @{NSForegroundColorAttributeName:[UIColor blackColor], NSFontAttributeName:[UIFont systemFontOfSize:15]};
 
     NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text attributes:attribs];
 
@@ -43,12 +40,11 @@
     NSRange string2Range = [text rangeOfString:string2];
     NSRange string3Range = [text rangeOfString:string3];
 
-    [attributedText setAttributes:@{NSForegroundColorAttributeName:[UIColor redColor], NSFontAttributeName:[UIFont systemFontOfSize:15]} range:string0Range];
-    [attributedText setAttributes:@{NSForegroundColorAttributeName:[UIColor blueColor], NSFontAttributeName:[UIFont systemFontOfSize:12]} range:string1Range];
-    [attributedText setAttributes:@{NSForegroundColorAttributeName:[UIColor greenColor], NSFontAttributeName:[UIFont systemFontOfSize:15]} range:string2Range];
-    [attributedText setAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor], NSFontAttributeName:[UIFont systemFontOfSize:15]} range:string3Range];
+    [attributedText setAttributes:@{NSForegroundColorAttributeName:[UIColor blueColor], NSFontAttributeName:[UIFont boldSystemFontOfSize:15.0]} range:string0Range];
+    [attributedText setAttributes:@{NSForegroundColorAttributeName:[UIColor blueColor], NSFontAttributeName:[UIFont boldSystemFontOfSize:15.0]} range:string1Range];
+    [attributedText setAttributes:@{NSForegroundColorAttributeName:[UIColor blueColor], NSFontAttributeName:[UIFont boldSystemFontOfSize:15.0]} range:string2Range];
+    [attributedText setAttributes:@{NSForegroundColorAttributeName:[UIColor blueColor], NSFontAttributeName:[UIFont boldSystemFontOfSize:15.0]} range:string3Range];
 
-    [self.resultsLabel setAttributedText:attributedText];
     [self.resultsTextView setAttributedText:attributedText];
 
     //self.resultsTextView.text = self.resultString;
